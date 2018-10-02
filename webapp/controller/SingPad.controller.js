@@ -14,13 +14,15 @@ sap.ui.define([
 
 			var canvas = document.getElementById("signature-pad");
 			var context = canvas.getContext("2d");
-			canvas.width = 276;
-			canvas.height = 180;
+			
+			canvas.width = 400;
+			canvas.height = 200;
 			context.fillStyle = "#fff";
 			context.strokeStyle = "#444";
 			context.lineWidth = 1.5;
 			context.lineCap = "round";
 			context.fillRect(0, 0, canvas.width, canvas.height);
+			
 			var disableSave = true;
 			var pixels = [];
 			var cpixels = [];
@@ -75,6 +77,7 @@ sap.ui.define([
 				canvas.addEventListener('mousemove', on_mousemove, false);
 				canvas.addEventListener('touchend', on_mouseup, false);
 				canvas.addEventListener('touchmove', on_mousemove, false);
+				
 				document.body.addEventListener('mouseup', on_mouseup, false);
 				document.body.addEventListener('touchend', on_mouseup, false);
 
@@ -133,9 +136,11 @@ sap.ui.define([
 		saveButton: function(oEvent) {
 			var canvas = document.getElementById("signature-pad");
 			var link = document.createElement('a');
+			
 			link.href = canvas.toDataURL('image/jpeg');
 			link.download = 'sign.jpeg';
 			link.click();
+			
 			var signaturePad = new this.SignaturePad(document.getElementById('signature-pad'), {
 				backgroundColor: '#ffffff',
 				penColor: 'rgb(0, 0, 0)'
@@ -146,7 +151,9 @@ sap.ui.define([
 		clearButton: function(oEvent) {
 			var canvas = document.getElementById("signature-pad");
 			var context = canvas.getContext("2d");
+			
 			context.clearRect(0, 0, canvas.width, canvas.height);
+			context.fillRect(0, 0, canvas.width, canvas.height);
 
 			var signaturePad = new this.SignaturePad(document.getElementById('signature-pad'), {
 				backgroundColor: '#ffffff',

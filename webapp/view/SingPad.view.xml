@@ -23,9 +23,9 @@
 						
 						<HBox>
 							
-							<Button id="Signature"	text="Signature"	press="onSign"></Button>
-							<Button id="Save"		text="Save" 		press="saveButton"></Button>
-							<Button id="clear"		text="Clear"		press="clearButton"></Button>
+							<Button id="Signature"	text="Signature"	press="onSign"		width='135px'></Button>
+							<Button id="Save"		text="Save" 		press="saveButton"	width='135px'></Button>
+							<Button id="clear"		text="Clear"		press="clearButton" width='135px'></Button>
 						</HBox>
 					</VBox>
 				</content>
